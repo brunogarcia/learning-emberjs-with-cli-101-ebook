@@ -3,6 +3,13 @@
   <p>{{model.lastName}}</p>
   <p>{{model.email}}</p>
   <p>{{model.twitter}}</p>
-  <p>{{link-to "Edit info" "friends.edit" model}}</p>
-  <p><a href="#" {{action "delete" model}}>delete</a></p>
+  <p>
+    {{link-to "Lend" "articles.new" class="button"}}
+    {{link-to "Edit" "friends.edit" model class="button"}}
+    <a href="#" {{action "delete" model}} class="button error">Delete</a>
+  </p>
+</div>
+
+<div class="articles-container">
+  {{outlet}}
 </div>
