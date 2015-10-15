@@ -1,4 +1,8 @@
-<p>{{#link-to 'friends'}}&lt; Back{{/link-to}} | {{link-to "Edit info" "friends.edit" model}}</p>
+<p>
+  {{#link-to 'friends'}}&lt; Back{{/link-to}} |
+  {{link-to "Edit" "friends.edit" model}} |
+  <a href="#" {{action "delete" model}}>Delete</a>
+</p>
 
 <ul>
 	<li>First Name: {{model.firstName}}</li>
