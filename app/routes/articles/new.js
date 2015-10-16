@@ -6,6 +6,19 @@ export default Ember.Route.extend({
       friend: this.modelFor('friends/show')
     });
   },
+  resetController: function (controller, isExiting) {
+    if (isExiting) {
+      // We grab the model from the controller
+      var model = controller.get('model');
+
+      // Because we are leaving the Route we verify if the model is in
+      // 'isNew' state, which means it wasn't saved to the backend.
+      if (model.get('isNew')) {
+        // We call DS#destroyRecord() which removes it from the store
+        model.destroyRecord();
+      }
+    }
+  },
   actions: {
     save() {
       var model = this.modelFor('articles/new');
