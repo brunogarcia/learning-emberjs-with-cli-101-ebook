@@ -1,15 +1,18 @@
-<div class="card friend-profile">
-  <p>{{model.firstName}}</p>
-  <p>{{model.lastName}}</p>
-  <p>{{model.email}}</p>
-  <p>{{model.twitter}}</p>
-  <p>
-    {{link-to "Lend" "articles.new" class="button"}}
-    {{link-to "Edit" "friends.edit" model class="button"}}
-    <a href="#" {{action "delete" model}} class="button error">Delete</a>
-  </p>
+<div class="friend-profile">
+  <div class="friend-info full">
+    {{fill-murray width=300 height=300}}
+    <div>
+      <p>{{model.fullName}}</p>
+      <p>{{model.email}}</p>
+      <p>{{model.twitter}}</p>
+      <ul class="friend-profile-links">
+        <li>{{link-to 'Edit' 'friends.edit' model class="button"}}</li>
+        <li>{{link-to 'Lend' 'articles.new' class="button"}}</li>
+        <li><a href="#" {{action "delete" model}} class="button error">Delete</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
-
 <div class="articles-container">
   {{outlet}}
 </div>
