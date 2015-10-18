@@ -11,7 +11,7 @@ table {
   width: 100%;
 }
 
-.friend-profile{
+.friend-profile {
   text-align: left;
 }
 
@@ -24,4 +24,8 @@ table {
   display: inline;
   list-style-type: none;
   padding-right: 20px;
+}
+
+.friends-table thead tr {
+  cursor: pointer;
 }

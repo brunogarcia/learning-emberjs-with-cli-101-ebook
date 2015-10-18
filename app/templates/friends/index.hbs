@@ -1,8 +1,16 @@
-<table class="primary">
+<table class="friends-table primary">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Articles</th>
+      <th {{action "setSortBy" "firstName"}}>
+        Named
+        {{#if (and (eq sortBy "firstName") (eq sortAscending true))}}&darr;{{/if}}
+        {{#if (and (eq sortBy "firstName") (eq sortAscending false))}}&uarr;{{/if}}
+      </th>
+      <th {{action "setSortBy" "totalArticles"}}>
+        Articles
+        {{#if (and (eq sortBy "totalArticles") (eq sortAscending true)) }}&darr;{{/if}}
+        {{#if (and (eq sortBy "totalArticles") (eq sortAscending false)) }}&uarr;{{/if}}
+        </th>
       <th></th>
     </tr>
   </thead>

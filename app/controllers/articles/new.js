@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     'model.description',
     {
       get() {
-        return !Ember.isEmpty(this.get('model.description'))
+        return !Ember.isEmpty(this.get('model.description'));
       }
     }
   ),
